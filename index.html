@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valencia</title>
+  <link rel="icon" href="Jj/who.ico" type="image/x-icon">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center; 
+      overflow-x: hidden; 
+      min-height: 100vh; 
+      position: relative; 
+    }
+
+    .image-container img {
+      width: 150px; /* Tamaño del logo */
+      height: auto;
+    }
+
+    /* Línea divisoria */
+    .divider {
+      width: 100vw; /* Ocupa todo el ancho de la pantalla */
+      height: 4px; 
+      background-color: black;
+      margin: 0; /* Sin margen para alinearse mejor */
+    }
+
+    .logo-text {
+      font-size: 16px; 
+      margin-top: 5px; 
+    }
+
+    /* Información con fondo */
+    .information-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0; 
+      width: 100%;
+      background-image: url("Jj/fondo.png");
+      background-size: cover; 
+      background-position: center;
+      padding: 20px;
+    }
+
+    /* Foto de perfil con borde blanco */
+    .image-container.foto img {
+      width: 150px; /* Tamaño de la foto */
+      height: auto;
+      border: 3px solid white; /* Borde blanco alrededor de la foto */
+      box-sizing: border-box; /* Asegura que el borde se mantenga dentro */
+    }
+
+    /* Información de texto */
+    .information {
+      max-width: 500px; /* Limita el ancho del texto */
+      text-align: left;
+      color: white;
+      padding: 10px; /* Espacio alrededor del texto */
+    }
+
+    .information h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .information span {
+      margin: 5px 0;
+      font-weight: bold;
+    }
+
+    .information p {
+      font-size: 16px;
+      margin-top: 5px;
+    }
+
+    /* Sección de fotos */
+    .photo-section {
+      margin: 40px 0; 
+      width: 100%; 
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Alinea todo al centro */
+    }
+
+    .photo-section h2 {
+      margin-bottom: 10px; 
+    }
+
+    .photo-gallery {
+      display: flex;
+      justify-content: center; 
+      flex-wrap: wrap; 
+      margin: 0; 
+      padding: 0; 
+      list-style: none; 
+    }
+
+    .photo-gallery img {
+      width: 150px; 
+      height: 150px;
+      margin: 10px; 
+      border: 2px solid #000; 
+    }
+
+    /* Cuadro de redes sociales */
+    .social-container {
+      background-color: black; /* Color del cuadro */
+      padding: 50px 0; /* Espacio vertical */
+      margin: 0; 
+      width: 100%; /* Ocupará todo el ancho disponible */
+    }
+
+    .social-icons {
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+    }
+
+    .social-icons img {
+      width: 50px; /* Tamaño de los iconos */
+      height: auto; 
+      margin: 10px; /* Espacio entre iconos */
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="image-container" id="logo">
+      <img src="Jj/Jv.png" alt="logo"> <!-- Reemplaza la ruta del logo -->
+    </div>
+    <div class="logo-text">Lo que es la pura calidad</div>
+    <div class="divider"></div> <!-- Línea divisoria completa debajo del logo -->
+  </header>
+
+  <section id="hero">
+    <div class="information-container">
+      <div class="image-container foto">
+        <img src="Jj/sex2.png" alt="Tu foto"> <!-- Imagen de perfil con borde blanco alrededor -->
+      </div>
+      <div class="information">
+        <h1>Julian Galvis</h1>
+        <span>@todo lo bueno tarda</span>
+        <p>Soy un camarógrafo profesional. Si necesitas fotos de alta calidad, ya sabes a quien hablar.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div> <!-- Línea divisoria entre la información y la sección de fotos -->
+
+    <div class="photo-section">
+      <h2>Mis Fotos</h2>
+      <div class="photo-gallery">
+        <img src="Jj/omai.png" alt="Foto 1"> <!-- Reemplaza con la ruta de tu primera foto -->
+        <img src="Jj/pai.jpg" alt="Foto 2"> <!-- Reemplaza con la ruta de tu segunda foto -->
+        <img src="Jj/mba.png" alt="Foto 3"> <!-- Reemplaza con la ruta de tu tercera foto -->
+        <img src="Jj/cie.png" alt="Foto 4"> <!-- Reemplaza con la ruta de tu cuarta foto -->
+      </div>
+    </div>
+
+    <!-- Cuadro de redes sociales -->
+    <div class="social-container">
+      <h2 style="color: white;">Mis redes sociales</h2>
+      <div class="social-icons">
+        <a href="https://x.com/EJuly4n?t=4OVvL2bpmOfcn02TWEWtdQ&s=09"><img src="redes/x.png" alt="Twitter"></a>
+        <a href="https://www.instagram.com/galvis15_?igsh=azM1anF2enR1c2o2"><img src="redes/ig.png" alt="Instagram"></a>
+        <a href="https://youtube.com/@ejulyan?si=dXhyHNB6vrE51jxp"><img src="redes/yt.png" alt="YouTube"></a>
+      </div>
+      <p id="visitCount" style="color: white; font-weight: bold;">Visitas: </p>
+    </div>
+  </section>
+
+  <script>
+    // Contador de visitas en almacenamiento local
+    function updateVisitCount() {
+      const visitCountElement = document.getElementById("visitCount");
+      let visitCount = localStorage.getItem("visitCount");
+
+      if (!visitCount) {
+        visitCount = 0;
+      } else {
+        visitCount = parseInt(visitCount, 10) + 1;
+      }
+
+      localStorage.setItem("visitCount", visitCount);
+      visitCountElement.textContent = "Visitas: " + visitCount;
+    }
+
+    // Llama a la función cuando se carga la página
+    document.addEventListener("DOMContentLoaded", updateVisitCount);
+  </script>
+</body>
+</html>
